@@ -1,0 +1,11 @@
+.icon {
+    background: url(./../assets/images/review.png) no-repeat;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.letter{
+    top: 5px;
+    position: relative;
+}
