@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './component/search.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,7 +22,12 @@ const routes: Routes = [
   imports: [
     [RouterModule.forChild(routes)],
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule
   ]
 })
 export class SearchModule { }

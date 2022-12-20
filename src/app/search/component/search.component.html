@@ -1,1 +1,38 @@
-<p>search works!</p>
+<!-- <h1>Share your holiday experience and review</h1> -->
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>What will you like to review?</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+</form>
+<div class="card-container">
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+      <span>Location</span>
+    </a>
+    <br>
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+        <span>Attraction</span>
+    </a>
+    <br>
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+        <span>Accomodation</span>
+    </a>
+    <br>
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+        <span>Restaurant</span>
+    </a>
+    <br>
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+        <span>Events</span>
+    </a>
+</div>
