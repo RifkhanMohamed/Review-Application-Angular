@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     FlexLayoutModule,
     [RouterModule.forChild(routes)],
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class PlacesModule { }
