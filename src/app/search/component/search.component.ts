@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -16,6 +16,10 @@ export class SearchComponent implements OnInit{
   'Trentham Estate','Woodlands Restaurent'];
   filteredOptions: Observable<string[]> | undefined;
 
+  constructor(private router: Router){
+
+  }
+
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -28,4 +32,9 @@ export class SearchComponent implements OnInit{
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
+
+  navigate(value: any){
+    this.router.navigate(['places'],{queryParams:{title:value}});
+  }
+
 }
