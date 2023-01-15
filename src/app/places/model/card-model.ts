@@ -5,4 +5,5 @@ export interface cardData{
     location:string;
     description:string;
     reviews:string;
+    rating:number
 }

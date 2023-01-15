@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -24,7 +26,10 @@ const routes: Routes = [
     [RouterModule.forChild(routes)],
     HttpClientModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxStarRatingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PlacesModule { }
