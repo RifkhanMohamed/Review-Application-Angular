@@ -24,6 +24,7 @@ export class PlacesComponent implements OnInit{
     if(this.value=='location'){
       this.post.push(
         {
+          id:1,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -33,6 +34,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:2,
           mainImageUrl:'./../../../assets/images/burslem.jpg',
           subImageUrl:'./../../../assets/images/burslem1.jpeg',
           title:'Burslem',
@@ -42,6 +44,7 @@ export class PlacesComponent implements OnInit{
           rating:2
         },
         {
+          id:3,
           mainImageUrl:'./../../../assets/images/cannock.jpg',
           subImageUrl:'./../../../assets/images/cannock1.jpeg',
           title:'Cannock',
@@ -56,6 +59,7 @@ export class PlacesComponent implements OnInit{
     if(this.value=='attraction'){
       this.post.push(
         {
+          id:4,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Rifkhan',
@@ -65,6 +69,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:5,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -74,6 +79,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:6,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -88,6 +94,7 @@ export class PlacesComponent implements OnInit{
     if(this.value=='accomodation'){
       this.post.push(
         {
+          id:7,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Rifkhan',
@@ -97,6 +104,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:8,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -106,6 +114,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:9,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -120,6 +129,7 @@ export class PlacesComponent implements OnInit{
     if(this.value=='restaurant'){
       this.post.push(
         {
+          id:10,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Rifkhan',
@@ -129,6 +139,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:11,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -138,6 +149,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:12,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -152,6 +164,7 @@ export class PlacesComponent implements OnInit{
     if(this.value=='events'){
       this.post.push(
         {
+          id:13,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Rifkhan',
@@ -161,6 +174,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:14,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -170,6 +184,7 @@ export class PlacesComponent implements OnInit{
           rating:3
         },
         {
+          id:15,
           mainImageUrl:'./../../../assets/images/audley.png',
           subImageUrl:'./../../../assets/images/audley1.jpeg',
           title:'Audley',
@@ -185,8 +200,14 @@ export class PlacesComponent implements OnInit{
   }
 
   navigate(value: any){
-    console.log(value);
-    
-    this.router.navigate(['login'],{queryParams:{data:value}});
+    if(!localStorage.getItem("currentUser")&&!localStorage.getItem("admin")){
+      localStorage.setItem("place",JSON.stringify(value))
+      this.router.navigate(['login']);
+    }
+    else{
+      localStorage.setItem("place",JSON.stringify(value))
+      this.router.navigate(['review']);
+    }
+
   }
 }

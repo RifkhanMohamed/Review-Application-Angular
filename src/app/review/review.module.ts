@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignupComponent } from './component/signup/signup.component';
+import { ReviewComponent } from './component/review/review.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,20 +9,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { Routes, RouterModule } from '@angular/router';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterModule, Routes } from '@angular/router';
 import { NgxStarRatingModule } from 'ngx-star-rating';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupComponent
+    component: ReviewComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    SignupComponent
+    ReviewComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,10 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatProgressBarModule
   ]
 })
-export class SignupModule { }
+export class ReviewModule { }

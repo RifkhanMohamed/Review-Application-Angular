@@ -1,0 +1,13 @@
+mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    /* text-align: center; */
+  }
+  mat-form-field{
+    width: 600px;
+  }
+
+  /* mat-card-footer{
+    display: flex;
+    justify-content: space-between;
+  } */

@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignupComponent } from './component/signup/signup.component';
+import { ForbiddenComponent } from './component/forbidden/forbidden.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Routes, RouterModule } from '@angular/router';
 import { NgxStarRatingModule } from 'ngx-star-rating';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupComponent
+    component: ForbiddenComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    SignupComponent
+    ForbiddenComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,10 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatProgressBarModule
   ]
 })
-export class SignupModule { }
+export class ForbiddenModule { }

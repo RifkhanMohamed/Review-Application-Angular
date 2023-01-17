@@ -8,6 +8,9 @@ const routes: Routes = [
   {path : "login", loadChildren : () => import('./login/login.module').then(m=>m.LoginModule)},
   {path : "signup", loadChildren : () => import('./signup/signup.module').then(m=>m.SignupModule)},
   {path : "guest", loadChildren : () => import('./guest/guest.module').then(m=>m.GuestModule)},
+  {path : "review", loadChildren : () => import('./review/review.module').then(m=>m.ReviewModule)},
+  {path : "admin", loadChildren : () => import('./admin/admin.module').then(m=>m.AdminModule)},
+  {path : "forbidden", loadChildren : () => import('./forbidden/forbidden.module').then(m=>m.ForbiddenModule)},
   {path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
