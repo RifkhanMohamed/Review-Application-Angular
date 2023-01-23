@@ -36,9 +36,20 @@ export class AdminComponent implements OnInit{
   dataSource:any 
   review:any;
   update(value:any,id:any){
+
+    
     this.review = JSON.parse(localStorage.getItem("review")|| '{}');  
+
     let index = this.review.findIndex((x: { id: string; }) => x.id === id);
-    this.review[index].display=Boolean((value.target as HTMLSelectElement)?.value);
+if(value.target.value=="true"){
+  this.review[index].display=true;
+}
+else{
+  this.review[index].display=false;
+}
+
     localStorage.setItem("review",JSON.stringify(this.review));
+
+    
   }
 }

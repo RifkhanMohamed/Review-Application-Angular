@@ -6,15 +6,15 @@
           The username and password were not recognized
         </mat-error>
         <mat-form-field>
-            <input matInput placeholder="Fist Name" [(ngModel)]="fullName" name="fullName" required>
+            <input matInput placeholder="Fist Name" [(ngModel)]="firstName" name="firstName" required>
             <mat-error>
-              Please provide full name
+              First Name is required
             </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+          <input matInput placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required>
           <mat-error>
-            Please provide a valid email address
+            Last Name is required
           </mat-error>
         </mat-form-field>
         <br>

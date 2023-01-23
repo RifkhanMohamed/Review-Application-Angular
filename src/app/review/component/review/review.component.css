@@ -1,13 +1,21 @@
 mat-card {
     max-width: 600px;
     margin: 2em auto;
+    overflow: hidden;
     /* text-align: center; */
   }
   mat-form-field{
     width: 600px;
   }
 
-  /* mat-card-footer{
-    display: flex;
-    justify-content: space-between;
-  } */
+  .example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
+
+

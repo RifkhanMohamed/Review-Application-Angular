@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,9 @@ place:any;
 rating:any;
 comments:any;
 review:any;
+forReview:any;
+forDisplayReview:any;
+forShowSubmit=false;
 // commentsForDisplay:any;
   constructor(private router: Router,private _snackBar: MatSnackBar){}
   ngOnInit(): void {
@@ -22,17 +25,36 @@ review:any;
       localStorage.removeItem('foo') 
     }
 
+    if(!localStorage.getItem('currentUser')&&!localStorage.getItem('admin')){
+      this.forShowSubmit=false;
+    }
+    else{
+      this.forShowSubmit=true;
+    }
+
+    this.place= JSON.parse(localStorage.getItem("place")|| '{}')
     if(!localStorage.getItem("review")){
       localStorage.setItem("review","[]")
+    }
+    else{
+      this.forReview=JSON.parse(localStorage.getItem("review")||'{}')
+      this.forDisplayReview=this.forReview.filter((e: {
+        place: any; id: string;  display:boolean
+})=>(e.place.id===this.place.id)&&(e.display===true));
     }   
-    this.place= JSON.parse(localStorage.getItem("place")|| '{}')
+    
+console.log(this.forDisplayReview,"forDisplay");
+
+
   }
 
   onSubmit(){ 
     let id; 
     this.review = JSON.parse(localStorage.getItem("review")|| '{}');  
     if(this.review.length!=0){
-      id=this.review.id+1;
+      console.log(this.review);
+      
+      id=this.review[this.review.length-1].id+1;
     }
     else{
       id=1;

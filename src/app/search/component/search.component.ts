@@ -34,7 +34,25 @@ export class SearchComponent implements OnInit{
   }
 
   navigate(value: any){
-    this.router.navigate(['places'],{queryParams:{title:value}});
+    this.router.navigate(['places'],{queryParams:{title:value,forSearch:'0',value:'forCategory'}});
+  }
+
+  onChange(value:any){
+    if(value=='Audley'||value=='Burslem'||value=='Cannock'){
+      this.router.navigate(['places'],{queryParams:{title:'location',forSearch:'1',value:value}})
+    }
+    else if(value=='Alton Towers'||value=='Trentham Estate'||value=='SnowDome'){
+      this.router.navigate(['places'],{queryParams:{title:'attraction',forSearch:'1',value:value}})
+    }
+    else if(value=='Hilton Garden Inn'||value=='Q Studios'||value=='Premier Inn Uttoxeter'){
+      this.router.navigate(['places'],{queryParams:{title:'accomodation',forSearch:'1',value:value}})
+    }
+    else if(value=='Woodlands Restaurent'||value=='Nando\'s'||value=='The Granary Grill'){
+      this.router.navigate(['places'],{queryParams:{title:'restaurant',forSearch:'1',value:value}})
+    }    
+    else if(value=='Camp Bestival Shropshire'||value=='Illuminated Arboretum'||value=='National Forest Walking Festival'){
+      this.router.navigate(['places'],{queryParams:{title:'events',forSearch:'1',value:value}})
+    }
   }
 
 }
